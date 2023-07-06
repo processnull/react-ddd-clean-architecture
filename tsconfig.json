@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "lib": ["es6", "dom", "es2017"],
+    "paths": {
+      "@domain": ["/src/**/*.{entity,model,irepository,util}.ts"],
+      "@application": [
+        "./src/**/*.{inputboundary,outputboundary,request.dto,response.dto,interactor}.ts"
+      ],
+      "@infraestructure": ["/src/**/*.{repository,service}.ts"],
+      "@presentation": [
+        "/src/**/*.{controller,presenter,component,view, route, action, reducer}.ts"
+      ]
+    }
+  }
+}
