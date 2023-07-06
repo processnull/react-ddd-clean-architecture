@@ -3,28 +3,25 @@ import { useState, useEffect } from 'react';
 import { Provider, useDispatch, useSelector } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 
-import { AddProductInputBondary } from './modules/product/application/usecases/add-product/boundary/add-product.inputboundary';
-import { AddProductInteractor } from './modules/product/application/usecases/add-product/interactor/add-product.interactor';
-import { GetProductListInputBondary } from './modules/product/application/usecases/get-product-list/boundary/get-product-list.inputboundary';
-import { GetProductListInteractor } from './modules/product/application/usecases/get-product-list/interactor/get-product-list.interactor';
-import { RemoveProductInputBondary } from './modules/product/application/usecases/remove-product/boundary/remove-product.inputboundary';
-import { RemoveProductInteractor } from './modules/product/application/usecases/remove-product/interactor/remove-product.interactor';
-import {
-  IProduct,
-  ProductId,
-} from './modules/product/domain/entities/product.entity';
-import { ProductAsyncRepositoryImpl } from './modules/product/infraestructure/repositories/product-async.repository';
-import { ProductController } from './modules/product/presentation/controllers/product.controller.';
-import { AddProductPresenter } from './modules/product/presentation/presenters/add-product.presenter';
-import { GetProductListPresenter } from './modules/product/presentation/presenters/get-product-list.presenter';
-import { RemoveProductPresenter } from './modules/product/presentation/presenters/remove-product.presenter';
-import { addProductAction } from './modules/product/presentation/redux/actions';
-import { store } from './modules/product/presentation/redux/store';
-import { ProductForm } from './modules/product/presentation/ui/components/product-form.component';
-import { ProductList } from './modules/product/presentation/ui/components/product-list.component';
-import { ProductViewModel } from './modules/product/presentation/viewmodel/product.viewmodel';
-import { Viewmodel } from './shared/core/viewmodel';
 import './style.css';
+import { AddProductInputBondary } from '@product/@application/add-product/boundary/add-product.inputboundary';
+import { AddProductInteractor } from '@product/@application/add-product/interactor/add-product.interactor';
+import { GetProductListInputBondary } from '@product/@application/get-product-list/boundary/get-product-list.inputboundary';
+import { GetProductListInteractor } from '@product/@application/get-product-list/interactor/get-product-list.interactor';
+import { RemoveProductInputBondary } from '@product/@application/remove-product/boundary/remove-product.inputboundary';
+import { RemoveProductInteractor } from '@product/@application/remove-product/interactor/remove-product.interactor';
+import { ProductId, IProduct } from '@product/@domain/entities/product.entity';
+import { ProductAsyncRepositoryImpl } from '@product/@infraestructure/repositories/product-async.repository';
+import { ProductController } from '@product/@presentation/controllers/product.controller.';
+import { AddProductPresenter } from '@product/@presentation/presenters/add-product.presenter';
+import { GetProductListPresenter } from '@product/@presentation/presenters/get-product-list.presenter';
+import { RemoveProductPresenter } from '@product/@presentation/presenters/remove-product.presenter';
+import { ProductForm } from '@product/@presentation/ui/components/product-form.component';
+import { ProductList } from '@product/@presentation/ui/components/product-list.component';
+import { ProductViewModel } from '@product/@presentation/viewmodel/product.viewmodel';
+import { addProductAction } from '@product/@presentation/redux/actions';
+import { store } from '@product/@presentation/redux/store';
+import { Viewmodel } from '@shared/core/viewmodel';
 
 export default function App() {
   const [productList, productListSet] = useState([]);
