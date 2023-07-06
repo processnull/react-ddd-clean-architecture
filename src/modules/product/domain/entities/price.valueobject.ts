@@ -1,7 +1,7 @@
 import { Either, left, right } from '../../../../shared/core/either';
 import { Guard } from '../../../../shared/core/guard';
 import { ValueObject } from '../../../../shared/domain/value-object';
-import { ProductPriceErrors } from './product.errors';
+// import { ProductPriceErrors } from './product.errors';
 
 type Currency = 'COP' | 'USD';
 
@@ -32,7 +32,8 @@ export class ProductPrice extends ValueObject<ProductPriceProps> {
       'PriceValue'
     );
     if (usernameOrError.isLeft()) {
-      return left(ProductPriceErrors.NullOrUndefinedValidationError.of());
+      return left(usernameOrError.error);
+      // return left(ProductPriceErrors.NullOrUndefinedValidationError.of());
     }
 
     const greaterThanOrError = Guard.greaterThan(

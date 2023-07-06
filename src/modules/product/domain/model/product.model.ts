@@ -1,6 +1,6 @@
-import { Product } from '../entities/product.entity';
+import { IProduct } from '../entities/product.entity';
 
 export class ProductModel {
-  products: Product[];
-  constructor(private product: Product) {}
+  products: IProduct[];
+  constructor(private product: IProduct) {}
 }

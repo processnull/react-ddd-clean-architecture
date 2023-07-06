@@ -1,32 +1,19 @@
 {
   "compilerOptions": {
+    "jsx": "react",
     "module": "commonjs",
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
     "sourceMap": true,
-    "lib": [
-      "es6",
-      "dom",
-      "es2017"
-    ],
+    "lib": ["es6", "dom", "es2017"],
     "baseUrl": ".", // This must be specified if "paths" is.
     "paths": {
-      "@product/@domain/*": [
-        "src/modules/product/domain/*"
-      ],
-      "@product/@application/*": [
-        "src/modules/product/application/usecases/*"
-      ],
-      "@product/@infraestructure/*": [
-        "src/modules/product/infraestructure/*"
-      ],
-      "@product/@presentation/*": [
-        "src/modules/product/presentation/*"
-      ],
-      "@shared/*": [
-        "src/shared/*"
-      ]
+      "@product/@domain/*": ["src/modules/product/domain/*"],
+      "@product/@application/*": ["src/modules/product/application/usecases/*"],
+      "@product/@infraestructure/*": ["src/modules/product/infraestructure/*"],
+      "@product/@presentation/*": ["src/modules/product/presentation/*"],
+      "@shared/*": ["src/shared/*"]
     }
   }
 }

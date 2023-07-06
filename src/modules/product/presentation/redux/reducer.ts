@@ -1,4 +1,9 @@
-const initialState = {
+import { IProduct } from '@product/@domain/entities/product.entity';
+
+interface IProductList {
+  products: IProduct[];
+}
+const initialState: IProductList = {
   products: [],
 };
 
