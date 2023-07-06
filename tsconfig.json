@@ -5,15 +5,27 @@
     "removeComments": true,
     "preserveConstEnums": true,
     "sourceMap": true,
-    "lib": ["es6", "dom", "es2017"],
+    "lib": [
+      "es6",
+      "dom",
+      "es2017"
+    ],
+    "baseUrl": ".", // This must be specified if "paths" is.
     "paths": {
-      "@domain": ["/src/**/*.{entity,model,irepository,util}.ts"],
-      "@application": [
-        "./src/**/*.{inputboundary,outputboundary,request.dto,response.dto,interactor}.ts"
+      "@product/@domain/*": [
+        "src/modules/product/domain/*"
       ],
-      "@infraestructure": ["/src/**/*.{repository,service}.ts"],
-      "@presentation": [
-        "/src/**/*.{controller,presenter,component,view, route, action, reducer}.ts"
+      "@product/@application/*": [
+        "src/modules/product/application/usecases/*"
+      ],
+      "@product/@infraestructure/*": [
+        "src/modules/product/infraestructure/*"
+      ],
+      "@product/@presentation/*": [
+        "src/modules/product/presentation/*"
+      ],
+      "@shared/*": [
+        "src/shared/*"
       ]
     }
   }

@@ -1,0 +1,421 @@
+digraph graphname
+{
+    "src/index.tsx" [shape=record , fillcolor=orange style=filled  label="index.tsx"]
+    "src/App.tsx" [shape=record  label="App.tsx"]
+    "src/modules/product/presentation/redux/store.ts" [shape=record  label="store.ts"]
+    "src/modules/product/application/usecases/add-product/boundary/add-product.inputboundary.ts" [shape=record  label="add-product.inputboundary.ts"]
+    "src/modules/product/application/usecases/add-product/interactor/add-product.interactor.ts" [shape=record  label="add-product.interactor.ts"]
+    "src/modules/product/application/usecases/get-product-list/boundary/get-product-list.inputboundary.ts" [shape=record  label="get-product-list.inputboundary.ts"]
+    "src/modules/product/application/usecases/get-product-list/interactor/get-product-list.interactor.ts" [shape=record  label="get-product-list.interactor.ts"]
+    "src/modules/product/application/usecases/remove-product/boundary/remove-product.inputboundary.ts" [shape=record  label="remove-product.inputboundary.ts"]
+    "src/modules/product/application/usecases/remove-product/interactor/remove-product.interactor.ts" [shape=record  label="remove-product.interactor.ts"]
+    "src/modules/product/domain/entities/product.entity.ts" [shape=record  label="product.entity.ts"]
+    "src/modules/product/infraestructure/repositories/product-async.repository.ts" [shape=record  label="product-async.repository.ts"]
+    "src/modules/product/presentation/controllers/product.controller..ts" [shape=record  label="product.controller..ts"]
+    "src/modules/product/presentation/presenters/add-product.presenter.ts" [shape=record  label="add-product.presenter.ts"]
+    "src/modules/product/presentation/presenters/get-product-list.presenter.ts" [shape=record  label="get-product-list.presenter.ts"]
+    "src/modules/product/presentation/presenters/remove-product.presenter.ts" [shape=record  label="remove-product.presenter.ts"]
+    "src/modules/product/presentation/redux/actions.ts" [shape=record  label="actions.ts"]
+    "src/modules/product/presentation/ui/components/product-form.component.tsx" [shape=record  label="product-form.component.tsx"]
+    "src/modules/product/presentation/ui/components/product-list.component.tsx" [shape=record  label="product-list.component.tsx"]
+    "src/modules/product/presentation/viewmodel/product.viewmodel.ts" [shape=record  label="product.viewmodel.ts"]
+    "src/shared/core/viewmodel.ts" [shape=record  label="viewmodel.ts"]
+    "src/shared/core/usecase.ts" [shape=record  label="usecase.ts"]
+    "src/modules/product/application/usecases/add-product/dto/add-product.request.dto.ts" [shape=record  label="add-product.request.dto.ts"]
+    "src/modules/product/application/usecases/add-product/boundary/add-product.outputboundary.ts" [shape=record  label="add-product.outputboundary.ts"]
+    "src/shared/core/presenter.ts" [shape=record  label="presenter.ts"]
+    "src/modules/product/application/usecases/add-product/dto/add-product.response.dto.ts" [shape=record  label="add-product.response.dto.ts"]
+    "src/shared/core/response.dto.ts" [shape=record  label="response.dto.ts"]
+    "src/modules/product/domain/entities/product.ts" [shape=record  label="product.ts"]
+    "src/modules/product/domain/repositories/product-async.repository.ts" [shape=record  label="product-async.repository.ts"]
+    "src/shared/core/either.ts" [shape=record  label="either.ts"]
+    "src/shared/domain/agreggate-root.ts" [shape=record  label="agreggate-root.ts"]
+    "src/shared/domain/unique-entity-id.ts" [shape=record  label="unique-entity-id.ts"]
+    "src/modules/product/domain/entities/name.valueobject.ts" [shape=record  label="name.valueobject.ts"]
+    "src/modules/product/domain/entities/price.valueobject.ts" [shape=record  label="price.valueobject.ts"]
+    "src/modules/product/domain/entities/product-Id.entity.ts" [shape=record  label="product-Id.entity.ts"]
+    "src/shared/domain/entity.ts" [shape=record  label="entity.ts"]
+    "src/shared/domain/identifier.ts" [shape=record  label="identifier.ts"]
+    "src/shared/core/guard.ts" [shape=record  label="guard.ts"]
+    "src/shared/domain/value-object.ts" [shape=record  label="value-object.ts"]
+    "src/modules/product/domain/entities/product.errors.ts" [shape=record  label="product.errors.ts"]
+    "src/modules/product/application/usecases/get-product-list/dto/get-product-list.response.dto.ts" [shape=record  label="get-product-list.response.dto.ts"]
+    "src/modules/product/domain/repositories/product.repository.ts" [shape=record  label="product.repository.ts"]
+    "src/modules/product/application/usecases/get-product-list/boundary/get-product-list.outputboundary.ts" [shape=record  label="get-product-list.outputboundary.ts"]
+    "src/modules/product/application/usecases/remove-product/dto/remove-product.request.dto.ts" [shape=record  label="remove-product.request.dto.ts"]
+    "src/modules/product/application/usecases/remove-product/boundary/remove-product.outputboundary.ts" [shape=record  label="remove-product.outputboundary.ts"]
+    "src/modules/product/application/usecases/remove-product/dto/remove-product.response.dto.ts" [shape=record  label="remove-product.response.dto.ts"]
+    "src/shared/core/update-vew-callback.ts" [shape=record  label="update-vew-callback.ts"]
+    "src/modules/product/presentation/redux/reducer.ts" [shape=record  label="reducer.ts"]
+    subgraph Rel1 {
+        
+        "src/index.tsx" -> "src/App.tsx" [color = "orange"]
+        "src/index.tsx" -> "src/modules/product/presentation/redux/store.ts" [color = "orange"]
+        "src/App.tsx" -> "src/modules/product/application/usecases/add-product/boundary/add-product.inputboundary.ts" [color = "#7E506A"]
+        "src/App.tsx" -> "src/modules/product/application/usecases/add-product/interactor/add-product.interactor.ts" [color = "#7E506A"]
+        "src/App.tsx" -> "src/modules/product/application/usecases/get-product-list/boundary/get-product-list.inputboundary.ts" [color = "#7E506A"]
+        "src/App.tsx" -> "src/modules/product/application/usecases/get-product-list/interactor/get-product-list.interactor.ts" [color = "#7E506A"]
+        "src/App.tsx" -> "src/modules/product/application/usecases/remove-product/boundary/remove-product.inputboundary.ts" [color = "#7E506A"]
+        "src/App.tsx" -> "src/modules/product/application/usecases/remove-product/interactor/remove-product.interactor.ts" [color = "#7E506A"]
+        "src/App.tsx" -> "src/modules/product/domain/entities/product.entity.ts" [color = "#7E506A"]
+        "src/App.tsx" -> "src/modules/product/infraestructure/repositories/product-async.repository.ts" [color = "#7E506A"]
+        "src/App.tsx" -> "src/modules/product/presentation/controllers/product.controller..ts" [color = "#7E506A"]
+        "src/App.tsx" -> "src/modules/product/presentation/presenters/add-product.presenter.ts" [color = "#7E506A"]
+        "src/App.tsx" -> "src/modules/product/presentation/presenters/get-product-list.presenter.ts" [color = "#7E506A"]
+        "src/App.tsx" -> "src/modules/product/presentation/presenters/remove-product.presenter.ts" [color = "#7E506A"]
+        "src/App.tsx" -> "src/modules/product/presentation/redux/actions.ts" [color = "#7E506A"]
+        "src/App.tsx" -> "src/modules/product/presentation/redux/store.ts" [color = "#7E506A"]
+        "src/App.tsx" -> "src/modules/product/presentation/ui/components/product-form.component.tsx" [color = "#7E506A"]
+        "src/App.tsx" -> "src/modules/product/presentation/ui/components/product-list.component.tsx" [color = "#7E506A"]
+        "src/App.tsx" -> "src/modules/product/presentation/viewmodel/product.viewmodel.ts" [color = "#7E506A"]
+        "src/App.tsx" -> "src/shared/core/viewmodel.ts" [color = "#7E506A"]
+        "src/modules/product/application/usecases/add-product/boundary/add-product.inputboundary.ts" -> "src/shared/core/usecase.ts" [color = "#36BD5B"]
+        "src/modules/product/application/usecases/add-product/boundary/add-product.inputboundary.ts" -> "src/modules/product/application/usecases/add-product/dto/add-product.request.dto.ts" [color = "#36BD5B"]
+        "src/modules/product/application/usecases/add-product/boundary/add-product.inputboundary.ts" -> "src/modules/product/application/usecases/add-product/boundary/add-product.outputboundary.ts" [color = "#36BD5B"]
+        "src/modules/product/application/usecases/add-product/boundary/add-product.outputboundary.ts" -> "src/shared/core/presenter.ts" [color = "#8D9917"]
+        "src/modules/product/application/usecases/add-product/boundary/add-product.outputboundary.ts" -> "src/modules/product/application/usecases/add-product/dto/add-product.response.dto.ts" [color = "#8D9917"]
+        "src/modules/product/application/usecases/add-product/dto/add-product.response.dto.ts" -> "src/shared/core/response.dto.ts" [color = "#03FD38"]
+        "src/modules/product/application/usecases/add-product/dto/add-product.response.dto.ts" -> "src/modules/product/domain/entities/product.entity.ts" [color = "#03FD38"]
+        "src/modules/product/application/usecases/add-product/interactor/add-product.interactor.ts" -> "src/modules/product/domain/entities/product.ts" [color = "#E4B60D"]
+        "src/modules/product/application/usecases/add-product/interactor/add-product.interactor.ts" -> "src/modules/product/domain/entities/product.entity.ts" [color = "#E4B60D"]
+        "src/modules/product/application/usecases/add-product/interactor/add-product.interactor.ts" -> "src/modules/product/domain/repositories/product-async.repository.ts" [color = "#E4B60D"]
+        "src/modules/product/application/usecases/add-product/interactor/add-product.interactor.ts" -> "src/modules/product/application/usecases/add-product/boundary/add-product.inputboundary.ts" [color = "#E4B60D"]
+        "src/modules/product/application/usecases/add-product/interactor/add-product.interactor.ts" -> "src/modules/product/application/usecases/add-product/boundary/add-product.outputboundary.ts" [color = "#E4B60D"]
+        "src/modules/product/application/usecases/add-product/interactor/add-product.interactor.ts" -> "src/modules/product/application/usecases/add-product/dto/add-product.request.dto.ts" [color = "#E4B60D"]
+        "src/modules/product/application/usecases/add-product/interactor/add-product.interactor.ts" -> "src/modules/product/application/usecases/add-product/dto/add-product.response.dto.ts" [color = "#E4B60D"]
+        "src/modules/product/domain/entities/product.ts" -> "src/shared/core/either.ts" [color = "#D75315"]
+        "src/modules/product/domain/entities/product.ts" -> "src/shared/domain/agreggate-root.ts" [color = "#D75315"]
+        "src/modules/product/domain/entities/product.ts" -> "src/shared/domain/unique-entity-id.ts" [color = "#D75315"]
+        "src/modules/product/domain/entities/product.ts" -> "src/modules/product/domain/entities/name.valueobject.ts" [color = "#D75315"]
+        "src/modules/product/domain/entities/product.ts" -> "src/modules/product/domain/entities/price.valueobject.ts" [color = "#D75315"]
+        "src/modules/product/domain/entities/product.ts" -> "src/modules/product/domain/entities/product-Id.entity.ts" [color = "#D75315"]
+        "src/modules/product/domain/entities/product.ts" -> "src/modules/product/domain/entities/product.entity.ts" [color = "#D75315"]
+        "src/shared/domain/agreggate-root.ts" -> "src/shared/domain/entity.ts" [color = "#B2AAE0"]
+        "src/shared/domain/agreggate-root.ts" -> "src/shared/domain/unique-entity-id.ts" [color = "#B2AAE0"]
+        "src/shared/domain/entity.ts" -> "src/shared/domain/unique-entity-id.ts" [color = "#B2F1FD"]
+        "src/shared/domain/unique-entity-id.ts" -> "src/shared/domain/identifier.ts" [color = "#5D9934"]
+        "src/modules/product/domain/entities/name.valueobject.ts" -> "src/shared/core/either.ts" [color = "#C50136"]
+        "src/modules/product/domain/entities/name.valueobject.ts" -> "src/shared/core/guard.ts" [color = "#C50136"]
+        "src/modules/product/domain/entities/name.valueobject.ts" -> "src/shared/domain/value-object.ts" [color = "#C50136"]
+        "src/modules/product/domain/entities/name.valueobject.ts" -> "src/modules/product/domain/entities/product.errors.ts" [color = "#C50136"]
+        "src/shared/core/guard.ts" -> "src/shared/core/either.ts" [color = "#DC7FB8"]
+        "src/modules/product/domain/entities/price.valueobject.ts" -> "src/shared/core/either.ts" [color = "#9129A8"]
+        "src/modules/product/domain/entities/price.valueobject.ts" -> "src/shared/core/guard.ts" [color = "#9129A8"]
+        "src/modules/product/domain/entities/price.valueobject.ts" -> "src/shared/domain/value-object.ts" [color = "#9129A8"]
+        "src/modules/product/domain/entities/price.valueobject.ts" -> "src/modules/product/domain/entities/product.errors.ts" [color = "#9129A8"]
+        "src/modules/product/domain/entities/product-Id.entity.ts" -> "src/shared/core/either.ts" [color = "#D8067D"]
+        "src/modules/product/domain/entities/product-Id.entity.ts" -> "src/shared/domain/entity.ts" [color = "#D8067D"]
+        "src/modules/product/domain/entities/product-Id.entity.ts" -> "src/shared/domain/unique-entity-id.ts" [color = "#D8067D"]
+        "src/modules/product/domain/repositories/product-async.repository.ts" -> "src/modules/product/domain/entities/product.entity.ts" [color = "#913153"]
+        "src/modules/product/application/usecases/get-product-list/boundary/get-product-list.inputboundary.ts" -> "src/shared/core/usecase.ts" [color = "#BC26AE"]
+        "src/modules/product/application/usecases/get-product-list/boundary/get-product-list.inputboundary.ts" -> "src/modules/product/application/usecases/get-product-list/dto/get-product-list.response.dto.ts" [color = "#BC26AE"]
+        "src/modules/product/application/usecases/get-product-list/dto/get-product-list.response.dto.ts" -> "src/shared/core/response.dto.ts" [color = "#DB3D11"]
+        "src/modules/product/application/usecases/get-product-list/dto/get-product-list.response.dto.ts" -> "src/modules/product/domain/entities/product.entity.ts" [color = "#DB3D11"]
+        "src/modules/product/application/usecases/get-product-list/interactor/get-product-list.interactor.ts" -> "src/modules/product/domain/repositories/product-async.repository.ts" [color = "#E9E673"]
+        "src/modules/product/application/usecases/get-product-list/interactor/get-product-list.interactor.ts" -> "src/modules/product/domain/repositories/product.repository.ts" [color = "#E9E673"]
+        "src/modules/product/application/usecases/get-product-list/interactor/get-product-list.interactor.ts" -> "src/modules/product/application/usecases/get-product-list/boundary/get-product-list.inputboundary.ts" [color = "#E9E673"]
+        "src/modules/product/application/usecases/get-product-list/interactor/get-product-list.interactor.ts" -> "src/modules/product/application/usecases/get-product-list/boundary/get-product-list.outputboundary.ts" [color = "#E9E673"]
+        "src/modules/product/application/usecases/get-product-list/interactor/get-product-list.interactor.ts" -> "src/modules/product/application/usecases/get-product-list/dto/get-product-list.response.dto.ts" [color = "#E9E673"]
+        "src/modules/product/domain/repositories/product.repository.ts" -> "src/modules/product/domain/entities/product.entity.ts" [color = "#659529"]
+        "src/modules/product/application/usecases/get-product-list/boundary/get-product-list.outputboundary.ts" -> "src/shared/core/presenter.ts" [color = "#512041"]
+        "src/modules/product/application/usecases/get-product-list/boundary/get-product-list.outputboundary.ts" -> "src/modules/product/application/usecases/get-product-list/dto/get-product-list.response.dto.ts" [color = "#512041"]
+        "src/modules/product/application/usecases/remove-product/boundary/remove-product.inputboundary.ts" -> "src/shared/core/usecase.ts" [color = "#F4A9A3"]
+        "src/modules/product/application/usecases/remove-product/boundary/remove-product.inputboundary.ts" -> "src/modules/product/application/usecases/remove-product/dto/remove-product.request.dto.ts" [color = "#F4A9A3"]
+        "src/modules/product/application/usecases/remove-product/dto/remove-product.request.dto.ts" -> "src/modules/product/domain/entities/product.entity.ts" [color = "#0380F1"]
+        "src/modules/product/application/usecases/remove-product/interactor/remove-product.interactor.ts" -> "src/modules/product/domain/entities/product.entity.ts" [color = "#11E10B"]
+        "src/modules/product/application/usecases/remove-product/interactor/remove-product.interactor.ts" -> "src/modules/product/domain/repositories/product-async.repository.ts" [color = "#11E10B"]
+        "src/modules/product/application/usecases/remove-product/interactor/remove-product.interactor.ts" -> "src/modules/product/application/usecases/remove-product/boundary/remove-product.inputboundary.ts" [color = "#11E10B"]
+        "src/modules/product/application/usecases/remove-product/interactor/remove-product.interactor.ts" -> "src/modules/product/application/usecases/remove-product/boundary/remove-product.outputboundary.ts" [color = "#11E10B"]
+        "src/modules/product/application/usecases/remove-product/interactor/remove-product.interactor.ts" -> "src/modules/product/application/usecases/remove-product/dto/remove-product.request.dto.ts" [color = "#11E10B"]
+        "src/modules/product/application/usecases/remove-product/interactor/remove-product.interactor.ts" -> "src/modules/product/application/usecases/remove-product/dto/remove-product.response.dto.ts" [color = "#11E10B"]
+        "src/modules/product/application/usecases/remove-product/boundary/remove-product.outputboundary.ts" -> "src/shared/core/presenter.ts" [color = "#8F0E2F"]
+        "src/modules/product/application/usecases/remove-product/boundary/remove-product.outputboundary.ts" -> "src/modules/product/application/usecases/remove-product/dto/remove-product.response.dto.ts" [color = "#8F0E2F"]
+        "src/modules/product/application/usecases/remove-product/dto/remove-product.response.dto.ts" -> "src/shared/core/response.dto.ts" [color = "#131B93"]
+        "src/modules/product/application/usecases/remove-product/dto/remove-product.response.dto.ts" -> "src/modules/product/domain/entities/product.entity.ts" [color = "#131B93"]
+        "src/modules/product/infraestructure/repositories/product-async.repository.ts" -> "src/modules/product/domain/entities/product.entity.ts" [color = "#485459"]
+        "src/modules/product/infraestructure/repositories/product-async.repository.ts" -> "src/modules/product/domain/repositories/product-async.repository.ts" [color = "#485459"]
+        "src/modules/product/presentation/controllers/product.controller..ts" -> "src/modules/product/application/usecases/add-product/boundary/add-product.inputboundary.ts" [color = "#BC84D7"]
+        "src/modules/product/presentation/controllers/product.controller..ts" -> "src/modules/product/application/usecases/get-product-list/boundary/get-product-list.inputboundary.ts" [color = "#BC84D7"]
+        "src/modules/product/presentation/controllers/product.controller..ts" -> "src/modules/product/application/usecases/remove-product/boundary/remove-product.inputboundary.ts" [color = "#BC84D7"]
+        "src/modules/product/presentation/controllers/product.controller..ts" -> "src/modules/product/domain/entities/product.entity.ts" [color = "#BC84D7"]
+        "src/modules/product/presentation/controllers/product.controller..ts" -> "src/modules/product/presentation/presenters/add-product.presenter.ts" [color = "#BC84D7"]
+        "src/modules/product/presentation/presenters/add-product.presenter.ts" -> "src/shared/core/update-vew-callback.ts" [color = "#8D5490"]
+        "src/modules/product/presentation/presenters/add-product.presenter.ts" -> "src/modules/product/application/usecases/add-product/boundary/add-product.outputboundary.ts" [color = "#8D5490"]
+        "src/modules/product/presentation/presenters/add-product.presenter.ts" -> "src/modules/product/application/usecases/add-product/dto/add-product.response.dto.ts" [color = "#8D5490"]
+        "src/modules/product/presentation/presenters/get-product-list.presenter.ts" -> "src/shared/core/update-vew-callback.ts" [color = "#9A3645"]
+        "src/modules/product/presentation/presenters/get-product-list.presenter.ts" -> "src/modules/product/application/usecases/get-product-list/boundary/get-product-list.outputboundary.ts" [color = "#9A3645"]
+        "src/modules/product/presentation/presenters/get-product-list.presenter.ts" -> "src/modules/product/application/usecases/get-product-list/dto/get-product-list.response.dto.ts" [color = "#9A3645"]
+        "src/modules/product/presentation/presenters/get-product-list.presenter.ts" -> "src/modules/product/presentation/viewmodel/product.viewmodel.ts" [color = "#9A3645"]
+        "src/modules/product/presentation/viewmodel/product.viewmodel.ts" -> "src/modules/product/domain/entities/product.entity.ts" [color = "#E4967C"]
+        "src/modules/product/presentation/presenters/remove-product.presenter.ts" -> "src/modules/product/application/usecases/remove-product/boundary/remove-product.outputboundary.ts" [color = "#54B613"]
+        "src/modules/product/presentation/presenters/remove-product.presenter.ts" -> "src/modules/product/application/usecases/remove-product/dto/remove-product.response.dto.ts" [color = "#54B613"]
+        "src/modules/product/presentation/presenters/remove-product.presenter.ts" -> "src/shared/core/update-vew-callback.ts" [color = "#54B613"]
+        "src/modules/product/presentation/redux/actions.ts" -> "src/modules/product/domain/entities/product.entity.ts" [color = "#D55948"]
+        "src/modules/product/presentation/redux/actions.ts" -> "src/modules/product/presentation/viewmodel/product.viewmodel.ts" [color = "#D55948"]
+        "src/modules/product/presentation/redux/store.ts" -> "src/modules/product/presentation/redux/reducer.ts" [color = "#C1AE55"]
+        "src/modules/product/presentation/ui/components/product-form.component.tsx" -> "src/modules/product/domain/entities/product.entity.ts" [color = "#96BEDD"]
+        "src/modules/product/presentation/ui/components/product-list.component.tsx" -> "src/modules/product/domain/entities/product.entity.ts" [color = "#4A6404"]
+        "src/modules/product/presentation/ui/components/product-list.component.tsx" -> "src/modules/product/presentation/viewmodel/product.viewmodel.ts" [color = "#4A6404"]
+        "src/shared/core/viewmodel.ts" -> "src/shared/core/response.dto.ts" [color = "#6AFE0A"]
+    }
+
+
+        subgraph cluster_1{
+            label = "src";
+        
+            "src/App.tsx";
+            "src/index.tsx";
+        
+            subgraph cluster_2{
+                label = "modules";
+        
+        
+                subgraph cluster_3{
+                    label = "product";
+        
+        
+                    subgraph cluster_4{
+                        label = "application";
+        
+        
+                        subgraph cluster_5{
+                            label = "usecases";
+        
+        
+                            subgraph cluster_6{
+                                label = "add-product";
+        
+        
+                                subgraph cluster_7{
+                                    label = "boundary";
+        
+                                    "src/modules/product/application/usecases/add-product/boundary/add-product.inputboundary.ts";
+                                    "src/modules/product/application/usecases/add-product/boundary/add-product.outputboundary.ts";
+        
+                                }
+
+
+                                subgraph cluster_8{
+                                    label = "dto";
+        
+                                    "src/modules/product/application/usecases/add-product/dto/add-product.request.dto.ts";
+                                    "src/modules/product/application/usecases/add-product/dto/add-product.response.dto.ts";
+        
+                                }
+
+
+                                subgraph cluster_9{
+                                    label = "interactor";
+        
+                                    "src/modules/product/application/usecases/add-product/interactor/add-product.interactor.ts";
+        
+                                }
+
+                            }
+
+
+                            subgraph cluster_10{
+                                label = "get-product-list";
+        
+        
+                                subgraph cluster_11{
+                                    label = "boundary";
+        
+                                    "src/modules/product/application/usecases/get-product-list/boundary/get-product-list.inputboundary.ts";
+                                    "src/modules/product/application/usecases/get-product-list/boundary/get-product-list.outputboundary.ts";
+        
+                                }
+
+
+                                subgraph cluster_12{
+                                    label = "dto";
+        
+                                    "src/modules/product/application/usecases/get-product-list/dto/get-product-list.response.dto.ts";
+        
+                                }
+
+
+                                subgraph cluster_13{
+                                    label = "interactor";
+        
+                                    "src/modules/product/application/usecases/get-product-list/interactor/get-product-list.interactor.ts";
+        
+                                }
+
+                            }
+
+
+                            subgraph cluster_14{
+                                label = "remove-product";
+        
+        
+                                subgraph cluster_15{
+                                    label = "boundary";
+        
+                                    "src/modules/product/application/usecases/remove-product/boundary/remove-product.inputboundary.ts";
+                                    "src/modules/product/application/usecases/remove-product/boundary/remove-product.outputboundary.ts";
+        
+                                }
+
+
+                                subgraph cluster_16{
+                                    label = "dto";
+        
+                                    "src/modules/product/application/usecases/remove-product/dto/remove-product.request.dto.ts";
+                                    "src/modules/product/application/usecases/remove-product/dto/remove-product.response.dto.ts";
+        
+                                }
+
+
+                                subgraph cluster_17{
+                                    label = "interactor";
+        
+                                    "src/modules/product/application/usecases/remove-product/interactor/remove-product.interactor.ts";
+        
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+
+                    subgraph cluster_18{
+                        label = "domain";
+        
+        
+                        subgraph cluster_19{
+                            label = "entities";
+        
+                            "src/modules/product/domain/entities/name.valueobject.ts";
+                            "src/modules/product/domain/entities/price.valueobject.ts";
+                            "src/modules/product/domain/entities/product-Id.entity.ts";
+                            "src/modules/product/domain/entities/product.entity.ts";
+                            "src/modules/product/domain/entities/product.errors.ts";
+                            "src/modules/product/domain/entities/product.ts";
+        
+                        }
+
+
+                        subgraph cluster_20{
+                            label = "repositories";
+        
+                            "src/modules/product/domain/repositories/product-async.repository.ts";
+                            "src/modules/product/domain/repositories/product.repository.ts";
+        
+                        }
+
+                    }
+
+
+                    subgraph cluster_21{
+                        label = "infraestructure";
+        
+        
+                        subgraph cluster_22{
+                            label = "repositories";
+        
+                            "src/modules/product/infraestructure/repositories/product-async.repository.ts";
+        
+                        }
+
+                    }
+
+
+                    subgraph cluster_23{
+                        label = "presentation";
+        
+        
+                        subgraph cluster_24{
+                            label = "controllers";
+        
+                            "src/modules/product/presentation/controllers/product.controller..ts";
+        
+                        }
+
+
+                        subgraph cluster_25{
+                            label = "presenters";
+        
+                            "src/modules/product/presentation/presenters/add-product.presenter.ts";
+                            "src/modules/product/presentation/presenters/get-product-list.presenter.ts";
+                            "src/modules/product/presentation/presenters/remove-product.presenter.ts";
+        
+                        }
+
+
+                        subgraph cluster_26{
+                            label = "redux";
+        
+                            "src/modules/product/presentation/redux/actions.ts";
+                            "src/modules/product/presentation/redux/reducer.ts";
+                            "src/modules/product/presentation/redux/store.ts";
+        
+                        }
+
+
+                        subgraph cluster_27{
+                            label = "ui";
+        
+        
+                            subgraph cluster_28{
+                                label = "components";
+        
+                                "src/modules/product/presentation/ui/components/product-form.component.tsx";
+                                "src/modules/product/presentation/ui/components/product-list.component.tsx";
+        
+                            }
+
+                        }
+
+
+                        subgraph cluster_29{
+                            label = "viewmodel";
+        
+                            "src/modules/product/presentation/viewmodel/product.viewmodel.ts";
+        
+                        }
+
+                    }
+
+                }
+
+            }
+
+
+            subgraph cluster_30{
+                label = "shared";
+        
+        
+                subgraph cluster_31{
+                    label = "core";
+        
+                    "src/shared/core/either.ts";
+                    "src/shared/core/guard.ts";
+                    "src/shared/core/presenter.ts";
+                    "src/shared/core/response.dto.ts";
+                    "src/shared/core/update-vew-callback.ts";
+                    "src/shared/core/usecase.ts";
+                    "src/shared/core/viewmodel.ts";
+        
+                }
+
+
+                subgraph cluster_32{
+                    label = "domain";
+        
+                    "src/shared/domain/agreggate-root.ts";
+                    "src/shared/domain/entity.ts";
+                    "src/shared/domain/identifier.ts";
+                    "src/shared/domain/unique-entity-id.ts";
+                    "src/shared/domain/value-object.ts";
+        
+                }
+
+            }
+
+        }
+
+}
+    

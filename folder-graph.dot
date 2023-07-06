@@ -1,0 +1,192 @@
+digraph graphname
+{
+    "src" [shape=record  label="src"]
+    "src/modules/product/presentation/redux" [shape=record  label="redux"]
+    "src/modules/product/application/usecases/add-product/boundary" [shape=record  label="boundary"]
+    "src/modules/product/application/usecases/add-product/interactor" [shape=record  label="interactor"]
+    "src/modules/product/application/usecases/get-product-list/boundary" [shape=record  label="boundary"]
+    "src/modules/product/application/usecases/get-product-list/interactor" [shape=record  label="interactor"]
+    "src/modules/product/application/usecases/remove-product/boundary" [shape=record  label="boundary"]
+    "src/modules/product/application/usecases/remove-product/interactor" [shape=record  label="interactor"]
+    "src/modules/product/domain/entities" [shape=record  label="entities"]
+    "src/modules/product/infraestructure/repositories" [shape=record  label="repositories"]
+    "src/modules/product/presentation/controllers" [shape=record  label="controllers"]
+    "src/modules/product/presentation/presenters" [shape=record  label="presenters"]
+    "src/modules/product/presentation/ui/components" [shape=record  label="components"]
+    "src/modules/product/presentation/viewmodel" [shape=record  label="viewmodel"]
+    "src/shared/core" [shape=record  label="core"]
+    "src/modules/product/application/usecases/add-product/dto" [shape=record  label="dto"]
+    "src/modules/product/domain/repositories" [shape=record  label="repositories"]
+    "src/shared/domain" [shape=record  label="domain"]
+    "src/modules/product/application/usecases/get-product-list/dto" [shape=record  label="dto"]
+    "src/modules/product/application/usecases/remove-product/dto" [shape=record  label="dto"]
+    subgraph Rel1 {
+        
+        "src" -> "src/modules/product/presentation/redux" [color = "#0F6AD5"]
+        "src" -> "src/modules/product/application/usecases/add-product/boundary" [color = "#0F6AD5"]
+        "src" -> "src/modules/product/application/usecases/add-product/interactor" [color = "#0F6AD5"]
+        "src" -> "src/modules/product/application/usecases/get-product-list/boundary" [color = "#0F6AD5"]
+        "src" -> "src/modules/product/application/usecases/get-product-list/interactor" [color = "#0F6AD5"]
+        "src" -> "src/modules/product/application/usecases/remove-product/boundary" [color = "#0F6AD5"]
+        "src" -> "src/modules/product/application/usecases/remove-product/interactor" [color = "#0F6AD5"]
+        "src" -> "src/modules/product/domain/entities" [color = "#0F6AD5"]
+        "src" -> "src/modules/product/infraestructure/repositories" [color = "#0F6AD5"]
+        "src" -> "src/modules/product/presentation/controllers" [color = "#0F6AD5"]
+        "src" -> "src/modules/product/presentation/presenters" [color = "#0F6AD5"]
+        "src" -> "src/modules/product/presentation/ui/components" [color = "#0F6AD5"]
+        "src" -> "src/modules/product/presentation/viewmodel" [color = "#0F6AD5"]
+        "src" -> "src/shared/core" [color = "#0F6AD5"]
+        "src/modules/product/application/usecases/add-product/boundary" -> "src/shared/core" [color = "#9140C5"]
+        "src/modules/product/application/usecases/add-product/boundary" -> "src/modules/product/application/usecases/add-product/dto" [color = "#9140C5"]
+        "src/modules/product/application/usecases/add-product/dto" -> "src/shared/core" [color = "#8A37E8"]
+        "src/modules/product/application/usecases/add-product/dto" -> "src/modules/product/domain/entities" [color = "#8A37E8"]
+        "src/modules/product/application/usecases/add-product/interactor" -> "src/modules/product/domain/entities" [color = "#FF023E"]
+        "src/modules/product/application/usecases/add-product/interactor" -> "src/modules/product/domain/repositories" [color = "#FF023E"]
+        "src/modules/product/application/usecases/add-product/interactor" -> "src/modules/product/application/usecases/add-product/boundary" [color = "#FF023E"]
+        "src/modules/product/application/usecases/add-product/interactor" -> "src/modules/product/application/usecases/add-product/dto" [color = "#FF023E"]
+        "src/modules/product/domain/entities" -> "src/shared/core" [color = "#88D8C9"]
+        "src/modules/product/domain/entities" -> "src/shared/domain" [color = "#88D8C9"]
+        "src/modules/product/domain/repositories" -> "src/modules/product/domain/entities" [color = "#7ADCDA"]
+        "src/modules/product/application/usecases/get-product-list/boundary" -> "src/shared/core" [color = "#21D78B"]
+        "src/modules/product/application/usecases/get-product-list/boundary" -> "src/modules/product/application/usecases/get-product-list/dto" [color = "#21D78B"]
+        "src/modules/product/application/usecases/get-product-list/dto" -> "src/shared/core" [color = "#737E93"]
+        "src/modules/product/application/usecases/get-product-list/dto" -> "src/modules/product/domain/entities" [color = "#737E93"]
+        "src/modules/product/application/usecases/get-product-list/interactor" -> "src/modules/product/domain/repositories" [color = "#5CFF20"]
+        "src/modules/product/application/usecases/get-product-list/interactor" -> "src/modules/product/application/usecases/get-product-list/boundary" [color = "#5CFF20"]
+        "src/modules/product/application/usecases/get-product-list/interactor" -> "src/modules/product/application/usecases/get-product-list/dto" [color = "#5CFF20"]
+        "src/modules/product/application/usecases/remove-product/boundary" -> "src/shared/core" [color = "#DC1B37"]
+        "src/modules/product/application/usecases/remove-product/boundary" -> "src/modules/product/application/usecases/remove-product/dto" [color = "#DC1B37"]
+        "src/modules/product/application/usecases/remove-product/dto" -> "src/modules/product/domain/entities" [color = "#4D5FBC"]
+        "src/modules/product/application/usecases/remove-product/interactor" -> "src/modules/product/domain/entities" [color = "#8230FC"]
+        "src/modules/product/application/usecases/remove-product/interactor" -> "src/modules/product/domain/repositories" [color = "#8230FC"]
+        "src/modules/product/application/usecases/remove-product/interactor" -> "src/modules/product/application/usecases/remove-product/boundary" [color = "#8230FC"]
+        "src/modules/product/application/usecases/remove-product/interactor" -> "src/modules/product/application/usecases/remove-product/dto" [color = "#8230FC"]
+        "src/modules/product/application/usecases/remove-product/dto" -> "src/shared/core" [color = "#4D5FBC"]
+        "src/modules/product/infraestructure/repositories" -> "src/modules/product/domain/entities" [color = "#2AA645"]
+        "src/modules/product/infraestructure/repositories" -> "src/modules/product/domain/repositories" [color = "#2AA645"]
+        "src/modules/product/presentation/controllers" -> "src/modules/product/application/usecases/add-product/boundary" [color = "#AC61F6"]
+        "src/modules/product/presentation/controllers" -> "src/modules/product/application/usecases/get-product-list/boundary" [color = "#AC61F6"]
+        "src/modules/product/presentation/controllers" -> "src/modules/product/application/usecases/remove-product/boundary" [color = "#AC61F6"]
+        "src/modules/product/presentation/controllers" -> "src/modules/product/domain/entities" [color = "#AC61F6"]
+        "src/modules/product/presentation/controllers" -> "src/modules/product/presentation/presenters" [color = "#AC61F6"]
+        "src/modules/product/presentation/presenters" -> "src/shared/core" [color = "#96C554"]
+        "src/modules/product/presentation/presenters" -> "src/modules/product/application/usecases/add-product/boundary" [color = "#96C554"]
+        "src/modules/product/presentation/presenters" -> "src/modules/product/application/usecases/add-product/dto" [color = "#96C554"]
+        "src/modules/product/presentation/presenters" -> "src/modules/product/application/usecases/get-product-list/boundary" [color = "#96C554"]
+        "src/modules/product/presentation/presenters" -> "src/modules/product/application/usecases/get-product-list/dto" [color = "#96C554"]
+        "src/modules/product/presentation/presenters" -> "src/modules/product/presentation/viewmodel" [color = "#96C554"]
+        "src/modules/product/presentation/viewmodel" -> "src/modules/product/domain/entities" [color = "#A5B973"]
+        "src/modules/product/presentation/presenters" -> "src/modules/product/application/usecases/remove-product/boundary" [color = "#96C554"]
+        "src/modules/product/presentation/presenters" -> "src/modules/product/application/usecases/remove-product/dto" [color = "#96C554"]
+        "src/modules/product/presentation/redux" -> "src/modules/product/domain/entities" [color = "#DAE8E7"]
+        "src/modules/product/presentation/redux" -> "src/modules/product/presentation/viewmodel" [color = "#DAE8E7"]
+        "src/modules/product/presentation/ui/components" -> "src/modules/product/domain/entities" [color = "#5C8386"]
+        "src/modules/product/presentation/ui/components" -> "src/modules/product/presentation/viewmodel" [color = "#5C8386"]
+    }
+
+
+        subgraph cluster_1{
+            label = "src";
+        
+        
+            subgraph cluster_2{
+                label = "modules";
+        
+        
+                subgraph cluster_3{
+                    label = "product";
+        
+        
+                    subgraph cluster_4{
+                        label = "application";
+        
+        
+                        subgraph cluster_5{
+                            label = "usecases";
+        
+        
+                            subgraph cluster_6{
+                                label = "add-product";
+        
+                                "src/modules/product/application/usecases/add-product/boundary";
+                                "src/modules/product/application/usecases/add-product/dto";
+                                "src/modules/product/application/usecases/add-product/interactor";
+        
+                            }
+
+
+                            subgraph cluster_7{
+                                label = "get-product-list";
+        
+                                "src/modules/product/application/usecases/get-product-list/boundary";
+                                "src/modules/product/application/usecases/get-product-list/dto";
+                                "src/modules/product/application/usecases/get-product-list/interactor";
+        
+                            }
+
+
+                            subgraph cluster_8{
+                                label = "remove-product";
+        
+                                "src/modules/product/application/usecases/remove-product/boundary";
+                                "src/modules/product/application/usecases/remove-product/dto";
+                                "src/modules/product/application/usecases/remove-product/interactor";
+        
+                            }
+
+                        }
+
+                    }
+
+
+                    subgraph cluster_9{
+                        label = "domain";
+        
+                        "src/modules/product/domain/entities";
+                        "src/modules/product/domain/repositories";
+        
+                    }
+
+
+                    subgraph cluster_10{
+                        label = "infraestructure";
+        
+                        "src/modules/product/infraestructure/repositories";
+        
+                    }
+
+
+                    subgraph cluster_11{
+                        label = "presentation";
+        
+                        "src/modules/product/presentation/controllers";
+                        "src/modules/product/presentation/presenters";
+                        "src/modules/product/presentation/redux";
+                        "src/modules/product/presentation/viewmodel";
+        
+                        subgraph cluster_12{
+                            label = "ui";
+        
+                            "src/modules/product/presentation/ui/components";
+        
+                        }
+
+                    }
+
+                }
+
+            }
+
+
+            subgraph cluster_13{
+                label = "shared";
+        
+                "src/shared/core";
+                "src/shared/domain";
+        
+            }
+
+        }
+
+}
+    

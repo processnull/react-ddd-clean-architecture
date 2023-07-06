@@ -16,7 +16,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "generate-graphs": "ts_dependency_graph --start src/index.tsx --graph_folder  > graph.dot ; ts_dependency_graph --start src/index.tsx --graph_folder --aggregate_by_folder > folder-graph.dot"
   },
   "devDependencies": {
     "react-scripts": "latest"

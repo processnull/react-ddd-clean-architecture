@@ -1,0 +1,7 @@
+{
+  "entryFilePath": "/src/index.tsx",
+  "resolveExtensions": [
+    ".tsx|.ts"
+  ],
+  "alias": {}
+}
