@@ -1,4 +1,4 @@
-import { IProduct } from '@product/@domain/entities/product.entity';
+import { IProduct } from "../../domain/entities/product.entity";
 
 interface IProductList {
   products: IProduct[];
