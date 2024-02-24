@@ -38,4 +38,12 @@ USAR EL MISMO PATRON DE  FLUX
 
 {  type: 'ADD_TODO', meta: {},   payload: {    text: 'Do something.'    } }
 
-https://github.com/redux-utilities/flux-standard-action?tab=readme-ov-file#motivation
+[https://github.com/redux-utilities/flux-standard-action?tab=readme-ov-file#motivation](https://github.com/redux-utilities/flux-standard-action?tab=readme-ov-file#motivation)
+
+El presenter en lugar de recibir un callback recibe la instancia de la libreria de state management para actualizar el estado y que la UI se actualice.
+
+Los repositiorios deben devolver eithers con instancias de las entidades o errores al usecase.
+
+Crear la capa nueva mappers  para la transformacion de datos  ya sea desde Infra a entidades (en los repos) o de UI a entidades (en los use cases)
+
+En lo posible la validacion en los entities y value objects a menos que sean modelos anemicos en ese caso se podria hacer la validacionantes de crear las entidades.

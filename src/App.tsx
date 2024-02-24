@@ -14,7 +14,7 @@ import {
   ProductId,
 } from './modules/product/domain/entities/product.entity';
 import { ProductAsyncRepositoryImpl } from './modules/product/infraestructure/repositories/product-async.repository';
-import { ProductController } from './modules/product/presentation/controllers/product.controller.';
+import { ProductController } from './modules/product/presentation/controllers/product.controller';
 import { AddProductPresenter } from './modules/product/presentation/presenters/add-product.presenter';
 import { GetProductListPresenter } from './modules/product/presentation/presenters/get-product-list.presenter';
 import { RemoveProductPresenter } from './modules/product/presentation/presenters/remove-product.presenter';
@@ -22,9 +22,11 @@ import { addProductAction } from './modules/product/presentation/redux/actions';
 import { store } from './modules/product/presentation/redux/store';
 import { ProductForm } from './modules/product/presentation/ui/components/product-form.component';
 import { ProductList } from './modules/product/presentation/ui/components/product-list.component';
-import { ProductViewModel } from './modules/product/presentation/viewmodel/product.viewmodel';
+import { GetProductListViewModel } from './modules/product/presentation/viewmodel/get-product-list.viewmodel';
 import { Viewmodel } from './shared/core/viewmodel';
 import './style.css';
+import { AddProductViewModel } from './modules/product/presentation/viewmodel/add-product.viewmodel';
+import { RemoveProductViewModel } from './modules/product/presentation/viewmodel/remove-product.viewmodel';
 
 export default function App() {
   const [productList, productListSet] = useState([]);
@@ -33,8 +35,8 @@ export default function App() {
   const repository = new ProductAsyncRepositoryImpl();
 
   // const onAddProduct = (product: ProductId) => {
-  const onAddProduct = (product: Viewmodel<ProductId>) => {
-    console.log('ADD PRODUCT VIEWMODEL', product.data);
+  const onAddProduct = (product: AddProductViewModel) => {
+    console.log('ADD PRODUCT VIEWMODEL', product);
     // Dispatch Redux action with the updated product
     // dispatch(addProductAction(product));
     // productListSet(product);
@@ -46,18 +48,18 @@ export default function App() {
     repository,
     addProductPresenter
   );
-  const onGetProductList = (products: ProductViewModel[]) => {
-    console.log('GET PRODUCT VIEWMODEL', products);
+  const onGetProductList = (response: GetProductListViewModel) => {
+    console.log('GET PRODUCT VIEWMODEL', response);
     // Dispatch Redux action with the updated product
     // dispatch(addProductAction(product));
-    productListSet(products);
+    productListSet(response.data);
   };
   const getProductlistPresenter = new GetProductListPresenter(onGetProductList);
   const getProductListUseCase: GetProductListInputBondary =
     new GetProductListInteractor(repository, getProductlistPresenter);
 
-  const onRemoveProduct = (product: ProductId) => {
-    console.log('REMOVE PRODUCT VIEWMODEL', product);
+  const onRemoveProduct = (response: RemoveProductViewModel) => {
+    console.log('REMOVE PRODUCT VIEWMODEL', response);
     controller.getProductList();
   };
   const removeProductPresenter = new RemoveProductPresenter(onRemoveProduct);
@@ -90,7 +92,7 @@ export default function App() {
     console.log('useEffect');
     controller.getProductList();
     // productListSet(controller.getProductList());
-    // return () => speechToTextService.current?.removeListener(onMessageReceived);
+    // return () => zspeechToTextService.current?.removeListener(onMessageReceived);
   }, []);
 
   return (

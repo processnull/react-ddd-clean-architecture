@@ -8,5 +8,5 @@ interface Error {
 export interface ResponseDTO {
   status: ResponseStatus;
   data?: any;
-  errors?: Error[];
+  error?: Error[];
 }

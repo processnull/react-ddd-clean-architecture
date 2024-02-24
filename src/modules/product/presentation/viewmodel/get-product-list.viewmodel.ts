@@ -1,10 +1,8 @@
 import { Viewmodel } from '../../../../shared/core/viewmodel';
 import { GetProductListResponseDTO } from '../../application/usecases/get-product-list/dto/get-product-list.response.dto';
-import { IProduct } from '../../domain/entities/product.entity';
+import { IProductViewModel } from './product.viewmodel';
 
-export interface IProductViewModel extends IProduct{
-}
-export class ProductViewModel implements Viewmodel<IProductViewModel> {
+export class GetProductListViewModel implements Viewmodel<IProductViewModel[]> {
   constructor(private readonly getProductListResponseDTO: GetProductListResponseDTO) {
   }
   get status(): 'error' | 'success' {
@@ -12,7 +10,7 @@ export class ProductViewModel implements Viewmodel<IProductViewModel> {
   }
 
   get data() {
-    return this.getProductListResponseDTO.data[0]
+    return this.getProductListResponseDTO.data
   }
   get error() {
     return this.getProductListResponseDTO.error

@@ -2,15 +2,15 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { ProductId } from '../../../domain/entities/product.entity';
-import { ProductViewModel } from '../../viewmodel/product.viewmodel';
+import { IProductViewModel, ProductViewModel } from '../../viewmodel/product.viewmodel';
 
 interface ProductListProps {
-  products: ProductViewModel[];
+  products: IProductViewModel[];
   onClick: (productId: ProductId) => void;
 }
 
 export const ProductList = ({ products, onClick }: ProductListProps) => {
-  const [productList, productListSet] = useState();
+  // const [productList, productListSet] = useState();
 
   const handleClick = (productId?: ProductId) => {
     onClick && onClick(productId ? productId : '0');
@@ -19,8 +19,8 @@ export const ProductList = ({ products, onClick }: ProductListProps) => {
   return (
     <ul>
       {products.map((product, index) => (
-        <li key={index}>
-          {product.name} - ${product.price}{' '}
+        <li key={product.id}>
+          {product.name} - ${product.price.value}{' '}
           <button onClick={() => handleClick(product.id)}>x</button>
         </li>
       ))}

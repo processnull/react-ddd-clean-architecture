@@ -13,7 +13,7 @@ export class AddProductInteractor implements AddProductInputBondary {
   constructor(
     private repository: ProductAsyncRepository,
     private presenter: AddProductOutputBondary
-  ) {}
+  ) { }
 
   async execute(product: AddProductProductRequestDTO): Promise<ProductId> {
     const productId = self.crypto.randomUUID();
@@ -24,16 +24,14 @@ export class AddProductInteractor implements AddProductInputBondary {
     const productOrError = Product.create(productprops);
     if (productOrError.isLeft()) {
       alert('error');
-      console.log();
+      // console.log(productOrError.error);
       const responseDTO: AddProductProductResponseDTO = {
         status: 'error',
-        errors: [
-          {
-            code: productOrError.error.name,
-            message: productOrError.error.message,
-            details: productOrError.error.stack,
-          },
-        ],
+        error: productOrError.error.map(error => ({
+          code: error.name,
+          message: error.message,
+          details: error.stack,
+        }))
       };
       console.log(responseDTO);
 

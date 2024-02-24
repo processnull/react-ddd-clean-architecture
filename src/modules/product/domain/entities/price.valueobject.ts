@@ -26,7 +26,7 @@ export class ProductPrice extends ValueObject<ProductPriceProps> {
     super(props);
   }
 
-  public static create(props: ProductPriceProps): Either<Error, Price> {
+  public static create(props: ProductPriceProps): Either<Error, ProductPrice> {
     const usernameOrError = Guard.againstNullOrUndefined(
       props.price,
       'PriceValue'
@@ -54,6 +54,6 @@ export class ProductPrice extends ValueObject<ProductPriceProps> {
       return left(oneOfOrError.error);
     }
 
-    return right(props.price);
+    return right(new ProductPrice(props));
   }
 }

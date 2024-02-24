@@ -6,7 +6,10 @@ import { ProductPrice, Price, ProductPriceProps } from './price.valueobject';
 import { ProductId } from './product-Id.entity';
 import { IProduct } from './product.entity';
 
-export type ProductProps = ProductNameProps & ProductPriceProps;
+export type ProductProps = {
+  name:ProductName,
+  price: ProductPrice
+}
 
 export class Product extends AggregateRoot<ProductProps> {
   get productId() {
@@ -17,11 +20,11 @@ export class Product extends AggregateRoot<ProductProps> {
   }
 
   get name(): string {
-    return this.props.name;
+    return this.name;
   }
 
   get price(): Price {
-    return this.props.price;
+    return this.price;
   }
 
   private constructor(props: ProductProps, id?: UniqueEntityID) {
@@ -31,11 +34,11 @@ export class Product extends AggregateRoot<ProductProps> {
   public static create(
     props: ProductProps,
     id?: UniqueEntityID
-  ): Either<Error, Product> {
-    const nameOrError = ProductName.create(props);
-    const priceOrError = ProductPrice.create(props);
+  ): Either<Error[], Product> {
+    const nameOrError = ProductName.create({ name: props.name.value });
+    const priceOrError = ProductPrice.create({ price: props.price.value });
 
-    const dtoOrError = sequence<Error, string | Price>([
+    const dtoOrError = sequence<Error, ProductName | ProductPrice>([
       nameOrError,
       priceOrError,
     ]);
@@ -43,9 +46,14 @@ export class Product extends AggregateRoot<ProductProps> {
     if (dtoOrError.isLeft()) {
       return left(dtoOrError.error);
     }
-
+    console.log(dtoOrError.value)
+    console.log(Object.assign({}, ...dtoOrError.value.map(prop => prop.props)) )
+    console.log( Object.fromEntries(dtoOrError.value.map(prop => prop.props).flatMap(Object.entries)))
     const product = new Product(
       {
+        // ...dtoOrError.value.reduce((prev, curr) => {
+        //   return { ...prev.value, ...curr.props }
+        // }, {}),
         ...props,
       },
       id

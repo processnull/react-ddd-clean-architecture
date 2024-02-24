@@ -19,7 +19,7 @@ export class ProductName extends ValueObject<ProductNameProps> {
     super(props);
   }
 
-  public static create(props: ProductNameProps): Either<Error, string> {
+  public static create(props: ProductNameProps): Either<Error, ProductName> {
     const usernameOrError = Guard.againstNullOrUndefined(
       props.name,
       'ProductName'
@@ -59,6 +59,6 @@ export class ProductName extends ValueObject<ProductNameProps> {
       // );
     }
 
-    return right(props.name);
+    return right(new ProductName(props));
   }
 }

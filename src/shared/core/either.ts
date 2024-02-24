@@ -40,14 +40,19 @@ export const right = <L, R>(value: R): Either<L, R> => {
   return new Right(value);
 };
 
-export const sequence = <L, R>(eithers: Either<L, R>[]): Either<L, R[]> => {
+export const sequence = <L, R>(eithers: Either<L, R>[]): Either<L[], R[]> => {
   const rightValues: R[] = [];
+  const leftValues: L[] = [];
   for (const either of eithers) {
     if (either.isLeft()) {
-      return left(either.error);
+      leftValues.push(either.error);
+      // return left(either.error);
     } else {
       rightValues.push(either.value);
     }
+  }
+  if(leftValues.length){
+    return left(leftValues)
   }
   return right(rightValues);
 };
